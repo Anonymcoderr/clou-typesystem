@@ -1,0 +1,6 @@
+tweetnacl.h, tweetnacl_sym.c, tweetnacl_poly.c are derived from TweetNaCl
+(https://tweetnacl.cr.yp.to/), a compact public-domain implementation of the
+NaCl API by Daniel J. Bernstein, Bernard van Gastel, Wesley Janssen, Tanja
+Lange, Peter Schwabe, and Sjaak Smetsers. TweetNaCl is released into the public
+domain. The _sym / _poly variants expose the Salsa20 and Poly1305 primitives as
+standalone constant-time analysis targets.

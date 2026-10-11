@@ -1,0 +1,602 @@
+{
+  "version": "cloupy-graph-v1",
+  "events":  [
+    {
+      "id": 0,
+      "name": "ENTRY",
+      "kind": "special",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 1,
+      "name": "OTHER   %2 = alloca i32, align 4",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 2,
+      "name": "OTHER   %3 = alloca i32, align 4",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 3,
+      "name": "OTHER   %4 = alloca ptr, align 8",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 4,
+      "name": "OTHER   %5 = alloca ptr, align 8",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 5,
+      "name": "OTHER   %6 = alloca ptr, align 8",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 6,
+      "name": "STORE   store i32 %0, ptr %2, align 4",
+      "kind": "write",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 7,
+      "name": "OTHER   call void @llvm.dbg.declare(metadata ptr %2, metadata !41, metadata !DIExpression()), !dbg !42",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 8,
+      "name": "OTHER   call void @llvm.dbg.declare(metadata ptr %3, metadata !43, metadata !DIExpression()), !dbg !44",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 9,
+      "name": "LOAD   %7 = load i32, ptr %2, align 4, !dbg !45",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 10,
+      "name": "LOAD   %8 = load i32, ptr @array_size, align 4, !dbg !46",
+      "kind": "read",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 11,
+      "name": "OTHER   %9 = sub i32 %8, 1, !dbg !47",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 12,
+      "name": "OTHER   %10 = and i32 %7, %9, !dbg !48",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 13,
+      "name": "STORE   store i32 %10, ptr %3, align 4, !dbg !49",
+      "kind": "write",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 14,
+      "name": "OTHER   call void @llvm.dbg.declare(metadata ptr %4, metadata !50, metadata !DIExpression()), !dbg !52",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 15,
+      "name": "STORE   store ptr @secretarray, ptr %4, align 8, !dbg !52",
+      "kind": "write",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 16,
+      "name": "OTHER   call void @llvm.dbg.declare(metadata ptr %5, metadata !53, metadata !DIExpression()), !dbg !55",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 17,
+      "name": "STORE   store ptr %4, ptr %5, align 8, !dbg !55",
+      "kind": "write",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 18,
+      "name": "OTHER   call void @llvm.dbg.declare(metadata ptr %6, metadata !56, metadata !DIExpression()), !dbg !58",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 19,
+      "name": "STORE   store ptr %5, ptr %6, align 8, !dbg !58",
+      "kind": "write",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 20,
+      "name": "LOAD   %11 = load ptr, ptr %6, align 8, !dbg !59",
+      "kind": "read",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 21,
+      "name": "LOAD   %12 = load ptr, ptr %11, align 8, !dbg !60",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 22,
+      "name": "LOAD   %13 = load ptr, ptr %12, align 8, !dbg !61",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 23,
+      "name": "LOAD   %14 = load i32, ptr %3, align 4, !dbg !62",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 24,
+      "name": "OTHER   %15 = zext i32 %14 to i64, !dbg !63",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 25,
+      "name": "OTHER   %16 = getelementptr inbounds i8, ptr %13, i64 %15, !dbg !63",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 26,
+      "name": "STORE   store i8 0, ptr %16, align 1, !dbg !64",
+      "kind": "write",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 27,
+      "name": "LOAD   %17 = load i32, ptr %3, align 4, !dbg !65",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": true,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 28,
+      "name": "OTHER   %18 = zext i32 %17 to i64, !dbg !66",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 29,
+      "name": "OTHER   %19 = getelementptr inbounds [16 x i8], ptr @secretarray, i64 0, i64 %18, !dbg !66",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 30,
+      "name": "LOAD   %20 = load i8, ptr %19, align 1, !dbg !66",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": true,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 31,
+      "name": "OTHER   %21 = zext i8 %20 to i32, !dbg !66",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 32,
+      "name": "OTHER   %22 = mul nsw i32 %21, 512, !dbg !67",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 33,
+      "name": "OTHER   %23 = sext i32 %22 to i64, !dbg !68",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 34,
+      "name": "OTHER   %24 = getelementptr inbounds [131072 x i8], ptr @publicarray2, i64 0, i64 %23, !dbg !68",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 35,
+      "name": "LOAD   %25 = load i8, ptr %24, align 1, !dbg !68",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": true,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 43,
+      "name": "EXIT",
+      "kind": "receiver",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": true,
+      "exec_mode": "arch",
+      "guard": null
+    }
+  ],
+  "edges": [
+    {
+      "kind": "tfo",
+      "src": 34,
+      "dst": 35
+    },
+    {
+      "kind": "tfo",
+      "src": 33,
+      "dst": 34
+    },
+    {
+      "kind": "tfo",
+      "src": 32,
+      "dst": 33
+    },
+    {
+      "kind": "tfo",
+      "src": 31,
+      "dst": 32
+    },
+    {
+      "kind": "addr",
+      "src": 30,
+      "dst": 35
+    },
+    {
+      "kind": "addr",
+      "src": 30,
+      "dst": 35
+    },
+    {
+      "kind": "tfo",
+      "src": 30,
+      "dst": 31
+    },
+    {
+      "kind": "tfo",
+      "src": 29,
+      "dst": 30
+    },
+    {
+      "kind": "tfo",
+      "src": 12,
+      "dst": 13
+    },
+    {
+      "kind": "tfo",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "kind": "data",
+      "src": 10,
+      "dst": 13
+    },
+    {
+      "kind": "tfo",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "kind": "data",
+      "src": 9,
+      "dst": 13
+    },
+    {
+      "kind": "tfo",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "kind": "tfo",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "kind": "tfo",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "kind": "tfo",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "kind": "tfo",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "kind": "tfo",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "kind": "tfo",
+      "src": 15,
+      "dst": 16
+    },
+    {
+      "kind": "tfo",
+      "src": 16,
+      "dst": 17
+    },
+    {
+      "kind": "tfo",
+      "src": 17,
+      "dst": 18
+    },
+    {
+      "kind": "tfo",
+      "src": 18,
+      "dst": 19
+    },
+    {
+      "kind": "tfo",
+      "src": 19,
+      "dst": 20
+    },
+    {
+      "kind": "addr",
+      "src": 20,
+      "dst": 26
+    },
+    {
+      "kind": "addr",
+      "src": 20,
+      "dst": 22
+    },
+    {
+      "kind": "tfo",
+      "src": 20,
+      "dst": 21
+    },
+    {
+      "kind": "addr",
+      "src": 20,
+      "dst": 21
+    },
+    {
+      "kind": "addr",
+      "src": 21,
+      "dst": 26
+    },
+    {
+      "kind": "tfo",
+      "src": 21,
+      "dst": 22
+    },
+    {
+      "kind": "addr",
+      "src": 21,
+      "dst": 22
+    },
+    {
+      "kind": "addr",
+      "src": 22,
+      "dst": 26
+    },
+    {
+      "kind": "tfo",
+      "src": 22,
+      "dst": 23
+    },
+    {
+      "kind": "addr",
+      "src": 23,
+      "dst": 26
+    },
+    {
+      "kind": "addr",
+      "src": 23,
+      "dst": 26
+    },
+    {
+      "kind": "tfo",
+      "src": 23,
+      "dst": 24
+    },
+    {
+      "kind": "tfo",
+      "src": 24,
+      "dst": 25
+    },
+    {
+      "kind": "tfo",
+      "src": 25,
+      "dst": 26
+    },
+    {
+      "kind": "tfo",
+      "src": 26,
+      "dst": 27
+    },
+    {
+      "kind": "addr",
+      "src": 27,
+      "dst": 35
+    },
+    {
+      "kind": "addr",
+      "src": 27,
+      "dst": 35
+    },
+    {
+      "kind": "addr",
+      "src": 27,
+      "dst": 30
+    },
+    {
+      "kind": "addr",
+      "src": 27,
+      "dst": 30
+    },
+    {
+      "kind": "tfo",
+      "src": 27,
+      "dst": 28
+    },
+    {
+      "kind": "tfo",
+      "src": 28,
+      "dst": 29
+    }
+  ]
+}

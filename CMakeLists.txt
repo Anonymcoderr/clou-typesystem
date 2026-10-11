@@ -1,0 +1,50 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(clou)
+
+set(CMAKE_CXX_STANDARD 20)
+find_package(LLVM REQUIRED CONFIG)
+
+message(LLVM_BINARY_DIR=${LLVM_BINARY_DIR})
+message(LLVM_INCLUDE_DIRS=${LLVM_INCLUDE_DIRS})
+
+list(APPEND CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")
+if(DEFINED Z3_DIR OR DEFINED ENV{Z3_DIR})
+  if(NOT DEFINED Z3_DIR)
+    set(Z3_DIR $ENV{Z3_DIR})
+  endif()
+  # set(Z3_LIBRARIES ${Z3_DIR}/lib/libz3.so)
+  # set(Z3_INCLUDE_DIR ${Z3_DIR}/include)
+  find_file(Z3_LIBRARIES libz3.so libz3.dylib PATHS ${Z3_DIR}/bin ${Z3_DIR}/lib REQUIRED)
+  set(Z3_INCLUDE_DIR ${Z3_DIR}/include)
+else()
+  find_package(Z3 REQUIRED)
+endif()
+# find_package(Z3 REQUIRED PATHS ${Z3_DIR})
+find_package(Protobuf REQUIRED)
+find_package(Boost REQUIRED)
+add_definitions(${LLVM_DEFINITIONS})
+include_directories(${LLVM_INCLUDE_DIRS} ${Z3_INCLUDE_DIR} ${BOOST_INCLUDE_DIRS})
+link_directories(${LLVM_LIBRARY_DIRS} ${BOOST_LIBRARY_DIRS})
+include(FindPkgConfig)
+pkg_search_module(LIBPROFILER REQUIRED libprofiler)
+include_directories(${LIBPROFILER_INCLUDE_DIRS})
+link_directories(${LIBPROFILER_LIBRARY_DIRS})
+
+find_library(GDBM_LIBRARIES gdbm REQUIRED)
+link_libraries(${GDBM_LIBRARIES})
+
+# set(SANITIZE thread)
+if(DEFINED SANITIZE)
+  add_compile_options(-fsanitize=${SANITIZE})
+  add_link_options(-fsanitize=${SANITIZE})
+endif()
+
+add_link_options(-w)
+add_compile_options(-Wno-c++20-designator -Wno-format-security -Wno-c99-designator -Wno-gnu-zero-variadic-macro-arguments -Wextra -Wall -pedantic)
+
+enable_testing()
+
+add_subdirectory(src)
+# add_subdirectory(docs)
+add_subdirectory(test)

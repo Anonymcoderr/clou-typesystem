@@ -1,0 +1,302 @@
+{
+  "version": "cloupy-graph-v1",
+  "events":  [
+    {
+      "id": 0,
+      "name": "ENTRY",
+      "kind": "special",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 1,
+      "name": "OTHER   %2 = alloca i64, align 8",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 2,
+      "name": "STORE   store i64 %0, ptr %2, align 8",
+      "kind": "write",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 3,
+      "name": "OTHER   call void @llvm.dbg.declare(metadata ptr %2, metadata !17, metadata !DIExpression()), !dbg !18",
+      "kind": "other",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 4,
+      "name": "LOAD   %3 = load i64, ptr %2, align 8, !dbg !19",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 5,
+      "name": "LOAD   %4 = load i64, ptr @array1_size, align 8, !dbg !21",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 6,
+      "name": "OTHER   %5 = icmp ult i64 %3, %4, !dbg !22",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 7,
+      "name": "OTHER   br i1 %5, label %6, label %20, !dbg !23",
+      "kind": "branch",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "arch",
+      "guard": null
+    },
+    {
+      "id": 8,
+      "name": "LOAD   %7 = load i64, ptr %2, align 8, !dbg !24",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": true,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 9,
+      "name": "OTHER   %8 = getelementptr inbounds [0 x i8], ptr @array1, i64 0, i64 %7, !dbg !26",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 10,
+      "name": "LOAD   %9 = load i8, ptr %8, align 1, !dbg !26",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": true,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 11,
+      "name": "OTHER   %10 = zext i8 %9 to i32, !dbg !26",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 12,
+      "name": "OTHER   %11 = mul nsw i32 %10, 512, !dbg !27",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 13,
+      "name": "OTHER   %12 = sext i32 %11 to i64, !dbg !28",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 14,
+      "name": "OTHER   %13 = getelementptr inbounds [0 x i8], ptr @array2, i64 0, i64 %12, !dbg !28",
+      "kind": "other",
+      "base":  "H",
+      "struct_unsafe": false,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 15,
+      "name": "LOAD   %14 = load i8, ptr %13, align 1, !dbg !28",
+      "kind": "read",
+      "base":  "H",
+      "struct_unsafe": true,
+      "is_receiver": false,
+      "exec_mode": "spec",
+      "guard": null
+    },
+    {
+      "id": 24,
+      "name": "EXIT",
+      "kind": "receiver",
+      "base":  "L",
+      "struct_unsafe": false,
+      "is_receiver": true,
+      "exec_mode": "arch",
+      "guard": null
+    }
+  ],
+  "edges": [
+    {
+      "kind": "tfo",
+      "src": 14,
+      "dst": 15
+    },
+    {
+      "kind": "tfo",
+      "src": 13,
+      "dst": 14
+    },
+    {
+      "kind": "tfo",
+      "src": 2,
+      "dst": 3
+    },
+    {
+      "kind": "tfo",
+      "src": 3,
+      "dst": 4
+    },
+    {
+      "kind": "ctrl",
+      "src": 4,
+      "dst": 15
+    },
+    {
+      "kind": "ctrl",
+      "src": 4,
+      "dst": 10
+    },
+    {
+      "kind": "ctrl",
+      "src": 4,
+      "dst": 8
+    },
+    {
+      "kind": "tfo",
+      "src": 4,
+      "dst": 5
+    },
+    {
+      "kind": "ctrl",
+      "src": 5,
+      "dst": 15
+    },
+    {
+      "kind": "ctrl",
+      "src": 5,
+      "dst": 10
+    },
+    {
+      "kind": "ctrl",
+      "src": 5,
+      "dst": 8
+    },
+    {
+      "kind": "tfo",
+      "src": 5,
+      "dst": 6
+    },
+    {
+      "kind": "tfo",
+      "src": 6,
+      "dst": 7
+    },
+    {
+      "kind": "tfo",
+      "src": 7,
+      "dst": 8
+    },
+    {
+      "kind": "addr",
+      "src": 8,
+      "dst": 15
+    },
+    {
+      "kind": "addr",
+      "src": 8,
+      "dst": 15
+    },
+    {
+      "kind": "addr",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "kind": "addr",
+      "src": 8,
+      "dst": 10
+    },
+    {
+      "kind": "tfo",
+      "src": 8,
+      "dst": 9
+    },
+    {
+      "kind": "tfo",
+      "src": 9,
+      "dst": 10
+    },
+    {
+      "kind": "addr",
+      "src": 10,
+      "dst": 15
+    },
+    {
+      "kind": "addr",
+      "src": 10,
+      "dst": 15
+    },
+    {
+      "kind": "tfo",
+      "src": 10,
+      "dst": 11
+    },
+    {
+      "kind": "tfo",
+      "src": 11,
+      "dst": 12
+    },
+    {
+      "kind": "tfo",
+      "src": 12,
+      "dst": 13
+    }
+  ]
+}

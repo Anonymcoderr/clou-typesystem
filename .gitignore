@@ -1,0 +1,46 @@
+*~
+*.so
+*.txt
+!CMakeLists.txt
+*.cmake
+CMakeFiles/
+*.o
+Makefile
+*.bc
+a.out
+*.tmp
+\#*
+.\#*
+out/
+*.bak
+make/
+xcode/
+build/
+.DS_Store
+SCRATCH
+TODO
+presentation/
+latex/
+COMMANDS
+*.prof
+Testing/
+results/
+bak/
+clou-out/
+*.old
+*.bak
+# build directories (out-of-tree)
+build-clean/
+build18/
+build*/
+
+# stray analysis output / backups
+*.orig
+/log
+scripts/log
+test/tea/log
+scripts/pht-v1-udt-out/
+
+# python bytecode
+__pycache__/
+*.pyc

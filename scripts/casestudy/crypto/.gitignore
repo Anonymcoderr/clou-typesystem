@@ -1,0 +1,4 @@
+# analysis cruft written into the working dir by the pass
+log
+*.o
+*.ll
